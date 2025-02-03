@@ -5,7 +5,8 @@ from masks import get_mask_account, get_mask_card_number
 
 def mask_account_card(string: str) -> Any:
     """
-    обрабатывает информацию о картах/счетах и выводит их замаскированную версию
+    обрабатывает информацию о картах/счетах
+    выводит их замаскированную версию
     """
 
     if "Счет" in string:
