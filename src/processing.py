@@ -7,14 +7,16 @@ def filter_by_state(lst: list, state: str = "EXECUTED") -> list:
     соответствует указанному значению.
     """
     new_lst = []
+    try:
+        for dictionary in lst:
+            for key, value in dictionary.items():
+                if key == "state":
+                    if value == state:
+                        new_lst.append(dictionary)
 
-    for dictionary in lst:
-        for key, value in dictionary.items():
-            if key == "state":
-                if value == state:
-                    new_lst.append(dictionary)
-
-    return new_lst
+        return new_lst
+    except ValueError:
+        return 'Некорректный ввод данных'
 
 
 def sort_by_date(lst: list, reverse_state: bool = False) -> list:
