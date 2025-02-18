@@ -43,6 +43,25 @@ executed_transactions = filter_by_state(transactions)
 sorted_transactions = sort_by_date(transactions)
 ```
 
+```python
+from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
+from tests.conftest import transactions
+
+# Пример использования filter_by_currency
+usd_transactions = filter_by_currency(transactions, "USD")
+for _ in range(2):
+    print(next(usd_transactions))
+
+# Пример использования transaction_descriptions
+descriptions = transaction_descriptions(transactions)
+for _ in range(5):
+    print(next(descriptions))
+
+# Пример использования card_number_generator
+for card_number in card_number_generator(1, 5):
+    print(card_number)
+```
+
 ## Тестирование
 
 В нашем проекте используется тестирование для обеспечения надёжности и корректности работы. Был использован фреймвор pytest.
@@ -51,7 +70,8 @@ sorted_transactions = sort_by_date(transactions)
 ```
 File	        statements  missing  excluded   coverage
 src\__init__.py	    0	        0       0         100%
+src\generators.py   9           0       0         100%
 src\masks.py	    19	        0       0         100%
 src\processing.py   17	        2       0         88%
 src\widget.py	    20	        2       0         90%
-Total	            56	        4       0         93%
+Total	            65	        4       0         94%
