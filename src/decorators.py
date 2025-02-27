@@ -13,7 +13,7 @@ def log_decorator(filename: str = None):
                 if filename:
                     if os.path.isfile(filename):
                         with open(filename, "a", encoding='utf-8') as f:
-                            data = f"{func.__name__} {result}\n"
+                            data = f"{func.__name__} ok\n"
 
                             f.write(data)
                     else:
