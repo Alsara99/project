@@ -1,8 +1,8 @@
-# Домашняя работа 10.1
+# Домашняя работа 11.2
 
 ## Описание:
 
-Мой проект ялвяется виджетомом банковских операций клиента. 
+Мой проект явkяется виджетомом банковских операций клиента. 
 
 ## Установка:
 
@@ -46,6 +46,8 @@ sorted_transactions = sort_by_date(transactions)
 ```python
 from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 from tests.conftest import transactions
+from decorators import log_decorator
+
 
 # Пример использования filter_by_currency
 usd_transactions = filter_by_currency(transactions, "USD")
@@ -60,6 +62,12 @@ for _ in range(5):
 # Пример использования card_number_generator
 for card_number in card_number_generator(1, 5):
     print(card_number)
+
+#Пример использования декоратора log_decorator
+@log_decorator(filename="mylog.txt")
+    def my_function(x, y):
+        return x + y
+    my_function(1, 2)
 ```
 
 ## Тестирование
