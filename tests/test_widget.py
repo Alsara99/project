@@ -1,14 +1,23 @@
 from src.widget import mask_account_card, get_date
 
+
 def test_mask_account_card(cards_and_accounts):
-    assert mask_account_card(cards_and_accounts[0]) == 'Maestro 1596 83** **** 5199'
-    assert mask_account_card(cards_and_accounts[1]) == 'Счет **9589'
-    assert mask_account_card(cards_and_accounts[2]) == 'MasterCard 7158 30** **** 6758'
-    assert mask_account_card(cards_and_accounts[3]) == 'Счет **5560'
-    assert mask_account_card(cards_and_accounts[4]) == 'Visa Classic 6831 98** **** 7658'
-    assert mask_account_card(cards_and_accounts[5]) == 'Visa Platinum 8990 92** **** 5229'
-    assert mask_account_card(cards_and_accounts[6]) == 'Visa Gold 5999 41** **** 6353'
-    assert mask_account_card(cards_and_accounts[7]) == 'Счет **4305'
+    assert (mask_account_card(cards_and_accounts[0]) ==
+            'Maestro 1596 83** **** 5199')
+    assert (mask_account_card(cards_and_accounts[1]) ==
+            'Счет **9589')
+    assert (mask_account_card(cards_and_accounts[2]) ==
+            'MasterCard 7158 30** **** 6758')
+    assert (mask_account_card(cards_and_accounts[3]) ==
+            'Счет **5560')
+    assert (mask_account_card(cards_and_accounts[4]) ==
+            'Visa Classic 6831 98** **** 7658')
+    assert (mask_account_card(cards_and_accounts[5]) ==
+            'Visa Platinum 8990 92** **** 5229')
+    assert (mask_account_card(cards_and_accounts[6]) ==
+            'Visa Gold 5999 41** **** 6353')
+    assert (mask_account_card(cards_and_accounts[7]) ==
+            'Счет **4305')
 
 
 def test_mask_account_card_empty():

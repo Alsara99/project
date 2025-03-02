@@ -4,7 +4,10 @@ def get_mask_card_number(number: int) -> str:
     if card_number == '':
         return ''
     elif card_number.isdigit() and len(card_number) == 16:
-        groups_of_card_number = [card_number[:4], card_number[4:6] + "**", "****", card_number[-4:]]
+        groups_of_card_number = [card_number[:4],
+                                 card_number[4:6] + "**",
+                                 "****",
+                                 card_number[-4:]]
         result = ""
         for i in groups_of_card_number:
             result = result + i + " "
