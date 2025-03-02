@@ -16,7 +16,7 @@ def test_console_log_decorator(capsys):
         return x+y
     my_function(1, 2)
     captured = capsys.readouterr()
-    assert captured.out == ('my_function 3\n')
+    assert captured.out == ('my_function ok\n')
 
 
 def test_file_log_decorator():
@@ -26,4 +26,4 @@ def test_file_log_decorator():
     my_function(1, 2)
     with open("mylog.txt", 'r', encoding='utf-8') as f:
         data = f.read()
-        assert data == "my_function 3\n"
+        assert data == "my_function ok\n"

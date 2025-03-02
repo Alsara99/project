@@ -18,7 +18,7 @@ def log_decorator(filename: str = None):
                     with open(filename, 'a', encoding='utf-8') as f:
                         f.write(f"{data}\n")
                 else:
-                    print(f"{data}\n")
+                    print(f"{data}")
 
             return None
 
