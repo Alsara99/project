@@ -28,3 +28,4 @@ def get_data(path):
     except Exception as e:
         logger.error("Файл не найден")
         return []
+    
