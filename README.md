@@ -1,4 +1,4 @@
-# Домашняя работа 10.1
+# Домашняя работа 13.1
 
 ## Описание:
 
@@ -31,6 +31,9 @@ python manage.py runserver
 
 ```python
 from src.processing import filter_by_state, sort_by_date
+from src.file_helper import read_csv_file
+
+import data
 
 # Пример использования filter_by_state
 transactions = [
@@ -60,6 +63,9 @@ for _ in range(5):
 # Пример использования card_number_generator
 for card_number in card_number_generator(1, 5):
     print(card_number)
+
+# Пример использования read_csv_file
+print(read_csv_file('../data/transactions.csv'))
 ```
 
 ## Тестирование
