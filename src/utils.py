@@ -3,7 +3,7 @@ import json
 import logging
 
 logger = logging.getLogger(__name__)
-file_handler = logging.FileHandler('../logs/utils.log')
+file_handler = logging.FileHandler('../PythonProject/logs/utils.log')
 file_formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s: %(message)s')
 
 file_handler.setFormatter(file_formatter)
@@ -28,4 +28,3 @@ def get_data(path):
     except Exception as e:
         logger.error("Файл не найден")
         return []
-    
