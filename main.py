@@ -38,9 +38,14 @@ def main(operations):
 
     date_filter = input("Отсортировать операции по дате? Да/Нет ").title()
     if date_filter == 'Да':
-        reverse_filter = input("Отсортировать по возрастанию или по убыванию? ").title()
-        if reverse_filter == 'Да':
-            pass
+        reverse_filter = input("Отсортировать по возрастанию или по убыванию? ").lower()
+        if reverse_filter == 'по возрастанию':
+            date_filter = sorted(state_filter, key=lambda x: datetime.strptime(x["date"],
+                                "%Y-%m-%dT%H:%M:%S.%f"))
+        elif reverse_filter == 'по убыванию':
+            date_filter = sorted(state_filter, key=lambda x: datetime.strptime(x["date"],
+                                "%Y-%m-%dT%H:%M:%S.%f"), reverse=True)
+        state_filter = date_filter
 
     rub_filter = input("Выводить только рублевые тразакции? Да/Нет ").title()
     if rub_filter == 'Да':
