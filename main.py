@@ -4,6 +4,7 @@ from src.lst_work import *
 from src.widget import *
 from src.file_helper import *
 from src.utils import *
+from src.processing import filter_by_state
 
 
 def main():
@@ -45,10 +46,7 @@ def main():
             print(f'Операции отфильтрованы по статусу "{user_state}"')
             break
     # print(data)
-    state_filter = []
-    for operation in data:
-        if operation.get("state") == user_state:
-            state_filter.append(operation)
+    state_filter = filter_by_state(data)
 
 
     date_filter = input("Отсортировать операции по дате? Да/Нет ").title()
